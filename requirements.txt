@@ -1,0 +1,9 @@
+transformers
+datasets
+torch
+sentencepiece
+evaluate
+seqeval
+wikipedia-api
+tqdm
+nltk

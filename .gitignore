@@ -1,7 +1,5 @@
 venv
 /venv/
-
-__pycache__/
 *.pyc
 *.pyo
 *.pyd
@@ -30,3 +28,19 @@ htmlcov/
 celerybeat-schedule
 instance/
 .webassets-cache/
+
+# Python
+__pycache__/
+*.pyc
+
+# Data
+data/raw/
+data/processed/*.json
+
+# Models
+*.pt
+*.bin
+*.ckpt
+
+# HuggingFace
+.cache/
