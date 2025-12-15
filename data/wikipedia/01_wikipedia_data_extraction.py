@@ -48,6 +48,8 @@ if __name__ == "__main__":
 
     all_samples = []
 
+    # extract entity mentions from each seed page
+
     for s in tqdm(seeds):
         all_samples.extend(extract_entity_mentions(s))
 
