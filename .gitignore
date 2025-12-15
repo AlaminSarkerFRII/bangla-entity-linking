@@ -1,3 +1,50 @@
-
 data/processed/*.json
-/*.json
+__pycache__/
+venv
+/venv/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+dist/
+build/
+.eggs/
+*.log
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+.env
+.env.*
+.ipynb_checkpoints/
+coverage/
+htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+.mypy_cache/
+.pyre//
+.pytype/
+celerybeat-schedule
+instance/
+.webassets-cache/
+
+# Python
+__pycache__/
+/__pycache__/
+*.pyc
+*.pyc
+
+# Data
+data/raw/
+data/processed/*.json
+
+# Models
+*.pt
+*.bin
+*.ckpt
+
+# HuggingFace
+.cache/
