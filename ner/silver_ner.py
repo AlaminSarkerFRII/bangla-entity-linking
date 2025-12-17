@@ -1,23 +1,25 @@
-
-"""
-SILVER NER dataset generations using Wikipedia API.
-"""
-
 def tokenize_bn(text):
-  return text.split()
+    """
+    Simple whitespace tokenizer for Bangla
+    (Can be replaced with Indic tokenizer later)
+    """
+    return text.strip().split()
 
 
-def bio_tag(tokens, entities):
-  tags= ["0"] * len(tokens)
+def bio_tag(tokens, mention, label="ENT"):
+    """
+    Convert a single entity mention into BIO tags
+    """
+    tags = ["O"] * len(tokens)
 
-  for ent_text, ent_label in entities:
-    ent_tokens = ent_text.split()
+    mention_tokens = mention.split()
+    m_len = len(mention_tokens)
 
-    for i in range(len(tokens) - len(ent_tokens) + 1):
-      if tokens[i:i+len(ent_tokens)] == ent_tokens:
-        tags[i] = f"B-{ent_label}"
-        for j in range(1, i+len(ent_tokens)):
-          tags[i+j] = f"I-{ent_label}"
+    for i in range(len(tokens) - m_len + 1):
+        if tokens[i:i + m_len] == mention_tokens:
+            tags[i] = f"B-{label}"
+            for j in range(1, m_len):
+                tags[i + j] = f"I-{label}"
+            return tags
 
-  return list(zip(tokens, tags))
-
+    return None
